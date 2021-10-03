@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('rate');
             $table->integer('view_counter');
             $table->string('status');
-            $table->json('other_atts');
+            $table->string('other_atts');
             $table->string('primary_img');
             $table->json('other_img');
             $table->timestamps();

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,8 +17,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class)->constrained();
-            $table->foreignIdFor(\App\Models\Cart::class)->constrained();
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Cart::class);
             $table->integer('price');
             $table->string('status');
             $table->timestamps();

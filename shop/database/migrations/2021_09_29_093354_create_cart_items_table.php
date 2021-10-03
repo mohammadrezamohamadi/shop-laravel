@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,8 +17,8 @@ class CreateCartItemsTable extends Migration
     {
         Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Product::class)->constrained();
-            $table->foreignIdFor(Cart::class)->constrained();
+            $table->foreignIdFor(Product::class);
+            $table->foreignIdFor(Cart::class);
             $table->integer('count');
             $table->integer('final_price');
             $table->timestamps();

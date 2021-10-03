@@ -15,8 +15,8 @@ class CreateUserDiscountsTable extends Migration
     {
         Schema::create('user_discounts', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class)->constrained();
-            $table->foreignIdFor(\App\Models\Discount::class)->constrained();
+            $table->foreignIdFor(\App\Models\User::class);
+            $table->foreignIdFor(\App\Models\Discount::class);
             $table->timestamps();
         });
     }
